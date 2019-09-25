@@ -94,7 +94,7 @@ function responseHandler(defer, err, res, body, handler: () => void) {
 function beginReleaseUpload(apiServer: string, apiVersion: string, appSlug: string, token: string, userAgent: string): Q.Promise<UploadInfo> {
     tl.debug("-- Prepare for uploading release.");
     let defer = Q.defer<UploadInfo>();
-    let beginUploadUrl: string = `${apiServer}/${apiVersion}/apps/${appSlug}/release_uploads`;
+    let beginUploadUrl: string = `${apiServer}/${apiVersion}/apps/${appSlug}/distribute/releases`;
     tl.debug(`---- url: ${beginUploadUrl}`);
 
     let headers = {
